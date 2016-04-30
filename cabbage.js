@@ -64,25 +64,25 @@ var cabbageLayer=cc.Layer.extend({
         var size=cc.winSize;
         var layerColor=new cc.LayerColor(cc.color(200,55,228),1136,640);
         this.addChild(layerColor,0);
-        this.sprite_background=new cc.Sprite("res/second/101juanxincai.png");
+        this.sprite_background=new cc.Sprite("images/101juanxincai.png");
         this.sprite_background.x = size.width / 2;
         this.sprite_background.y = size.height / 2;
         this.addChild(this.sprite_background, 1);
 
         for(var i=0;i<7;i++){
-            this.array_sprite_target[i]=new targetSprite("res/second/cabbage/"+this.array_zimu[i]+"3.png",this.array_zimu[i],false);
+            this.array_sprite_target[i]=new targetSprite("images/"+this.array_zimu[i]+"3.png",this.array_zimu[i],false);
             this.array_sprite_target[i].x=size.width/2-320+i*111;
             this.array_sprite_target[i].y=size.height/2-226;
             this.addChild(this.array_sprite_target[i],2);
         }
 
-        this.array_sprite_zimu[0]=new zimuSprite("res/second/cabbage/"+"3"+this.array_zimu[0]+".png",this.array_zimu[0],{x:size.width/2-170-132,y:size.height/2-80+120*0});
-        this.array_sprite_zimu[1]=new zimuSprite("res/second/cabbage/"+"3"+this.array_zimu[1]+"1.png",this.array_zimu[1],{x:size.width/2-132-170+620*1,y:size.height/2-80+120*0});
-        this.array_sprite_zimu[2]=new zimuSprite("res/second/cabbage/"+"3"+this.array_zimu[2]+"1.png",this.array_zimu[2],{x:size.width/2-132-230+15,y:size.height/2-80+120*1+15});
-        this.array_sprite_zimu[3]=new zimuSprite("res/second/cabbage/"+"3"+this.array_zimu[3]+"2.png",this.array_zimu[3],{x:size.width/2-132-170+650*1+15,y:size.height/2-80+120*1+15});
-        this.array_sprite_zimu[4]=new zimuSprite("res/second/cabbage/"+"3"+this.array_zimu[4]+"2.png",this.array_zimu[4],{x:size.width/2-132-170+15,y:size.height/2+80+110*1+15});
-        this.array_sprite_zimu[5]=new zimuSprite("res/second/cabbage/"+"3"+this.array_zimu[5]+".png",this.array_zimu[5],{x:size.width/2-132-200+600*1+15,y:size.height/2+80+110*1+15});
-        this.array_sprite_zimu[6]=new zimuSprite("res/second/cabbage/"+"3"+this.array_zimu[6]+".png",this.array_zimu[6],{x:size.width/2,y:size.height/2+80+110*1+15});
+        this.array_sprite_zimu[0]=new zimuSprite("images/"+"3"+this.array_zimu[0]+".png",this.array_zimu[0],{x:size.width/2-170-132,y:size.height/2-80+120*0});
+        this.array_sprite_zimu[1]=new zimuSprite("images/"+"3"+this.array_zimu[1]+"1.png",this.array_zimu[1],{x:size.width/2-132-170+620*1,y:size.height/2-80+120*0});
+        this.array_sprite_zimu[2]=new zimuSprite("images/"+"3"+this.array_zimu[2]+"1.png",this.array_zimu[2],{x:size.width/2-132-230+15,y:size.height/2-80+120*1+15});
+        this.array_sprite_zimu[3]=new zimuSprite("images/"+"3"+this.array_zimu[3]+"2.png",this.array_zimu[3],{x:size.width/2-132-170+650*1+15,y:size.height/2-80+120*1+15});
+        this.array_sprite_zimu[4]=new zimuSprite("images/"+"3"+this.array_zimu[4]+"2.png",this.array_zimu[4],{x:size.width/2-132-170+15,y:size.height/2+80+110*1+15});
+        this.array_sprite_zimu[5]=new zimuSprite("images/"+"3"+this.array_zimu[5]+".png",this.array_zimu[5],{x:size.width/2-132-200+600*1+15,y:size.height/2+80+110*1+15});
+        this.array_sprite_zimu[6]=new zimuSprite("images/"+"3"+this.array_zimu[6]+".png",this.array_zimu[6],{x:size.width/2,y:size.height/2+80+110*1+15});
         
         for(var i=0;i<7;i++){
         this.array_sprite_zimu[i].x=this.array_sprite_zimu[i].getPosition().x;
@@ -133,7 +133,6 @@ var cabbageLayer=cc.Layer.extend({
                     if(!self.n[0]){self.n_index++;self.n[0]=1}
                     if(self.n_index==7){
                     self.scheduleOnce(function(){ alert("gongxi xuehui dan ci cabbage")},1.2);
-                    self.scheduleOnce(function(){ cc.director.pushScene(new cc.TransitionSlideInR(2, new tomatoScence()));},1.3);
                     }                                                           
                 }else if(!self.array_sprite_target[1].getStatus()&&self.array_sprite_target[1].getZimuName() == target.getZimuName() && cc.rectIntersectsRect(goal_rect, sprite_1_rect)){                       
                     target.runAction(new cc.scaleTo(0.5,1)) ;
@@ -145,7 +144,6 @@ var cabbageLayer=cc.Layer.extend({
                         self.n_index++;self.n[1]=1}
                     if(self.n_index==7){
                         self.scheduleOnce(function(){ alert("gongxi xuehui dan ci cabbage")},1.2);
-                        self.scheduleOnce(function(){ cc.director.pushScene(new cc.TransitionSlideInR(2, new tomatoScence()));},1.3);
                     }     
                                                                          
                 }else if(!self.array_sprite_target[2].getStatus()&&self.array_sprite_target[2].getZimuName() == target.getZimuName() && cc.rectIntersectsRect(goal_rect, sprite_2_rect)){                       
@@ -158,7 +156,6 @@ var cabbageLayer=cc.Layer.extend({
                         self.n_index++;self.n[2]=1}
                     if(self.n_index==7){
                         self.scheduleOnce(function(){ alert("gongxi xuehui dan ci cabbage")},1.2);
-                        self.scheduleOnce(function(){ cc.director.pushScene(new cc.TransitionSlideInR(2, new tomatoScence()));},1.3);
                     }     
                                                                          
                 }else if(!self.array_sprite_target[3].getStatus()&&self.array_sprite_target[3].getZimuName() == target.getZimuName() && cc.rectIntersectsRect(goal_rect, sprite_3_rect)){                       
@@ -171,7 +168,6 @@ var cabbageLayer=cc.Layer.extend({
                         self.n_index++;self.n[3]=1}
                     if(self.n_index==7){
                         self.scheduleOnce(function(){ alert("gongxi xuehui dan ci cabbage")},1.2);
-                        self.scheduleOnce(function(){ cc.director.pushScene(new cc.TransitionSlideInR(2, new tomatoScence()));},1.3);
                     }     
                                                                          
                 }else if(!self.array_sprite_target[4].getStatus()&&self.array_sprite_target[4].getZimuName() == target.getZimuName() && cc.rectIntersectsRect(goal_rect, sprite_4_rect)){                       
@@ -184,7 +180,6 @@ var cabbageLayer=cc.Layer.extend({
                         self.n_index++;self.n[4]=1}
                     if(self.n_index==7){
                         self.scheduleOnce(function(){ alert("gongxi xuehui dan ci cabbage")},1.2);
-                        self.scheduleOnce(function(){ cc.director.pushScene(new cc.TransitionSlideInR(2, new tomatoScence()));},1.3);
                     }     
                                                                          
                 }else if(!self.array_sprite_target[5].getStatus()&&self.array_sprite_target[5].getZimuName() == target.getZimuName() && cc.rectIntersectsRect(goal_rect, sprite_5_rect)){                       
@@ -197,7 +192,6 @@ var cabbageLayer=cc.Layer.extend({
                         self.n_index++;self.n[5]=1}
                     if(self.n_index==7){
                         self.scheduleOnce(function(){ alert("gongxi xuehui dan ci cabbage")},1.2);
-                        self.scheduleOnce(function(){ cc.director.pushScene(new cc.TransitionSlideInR(2, new tomatoScence()));},1.3);
                     }     
                                                                          
                 }else if(!self.array_sprite_target[6].getStatus()&&self.array_sprite_target[6].getZimuName() == target.getZimuName() && cc.rectIntersectsRect(goal_rect, sprite_6_rect)){                       
@@ -209,18 +203,13 @@ var cabbageLayer=cc.Layer.extend({
                     if(!self.n[6]){
                         self.n_index++;self.n[6]=1}
                     if(self.n_index==7){
-                        // self.scheduleOnce(self.vegetableAction,1.2);
-                        // self.vegetableAction();
+
                         self.scheduleOnce(function(){ alert("gongxi xuehui dan ci cabbage")},1.2);
-                        self.scheduleOnce(function(){ cc.director.pushScene(new cc.TransitionSlideInR(2, new tomatoScence()));},1.3);
                     }     
                                                                          
                 } else{
                         target.runAction(new cc.scaleTo(0.5,1)) ;
-                        //target.removeAllActions();
-                        // var action = new cc.scaleTo(0.5,1);
-                        // cc.log(action);
-                        // target.runAction(new cc.moveBy(0.5,100,100));
+                  
                         target.x = target.getPosition().x;
                         target.y = target.getPosition().y;
                         alert("failed");
