@@ -17,7 +17,7 @@ var cabbageLayer=cc.Layer.extend({
         var size=cc.winSize;
         var layerColor=new cc.LayerColor(cc.color(200,55,228),1136,640);
         this.addChild(layerColor,0);
-        this.sprite_background=new cc.Sprite("res/second/101juanxincai.png");
+        this.sprite_background=new cc.Sprite("res/images/101juanxincai.png");
         this.sprite_background.x = size.width / 2;
         this.sprite_background.y = size.height / 2;
         this.addChild(this.sprite_background, 1);
